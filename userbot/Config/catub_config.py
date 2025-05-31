@@ -7,11 +7,13 @@
 
 import os
 
-ENV = bool(os.environ.get("ENV", True))
+ENV = bool(os.environ.get("ENV", True))  # Default True for Koyeb/Replit
 
 if ENV:
-    pass
+    from sample_config import Config  # ✅ Uses env vars for Koyeb/Heroku/etc.
 elif os.path.exists("config.py"):
-    pass
+    from config import Development as Config  # ✅ For local dev only
 else:
-    raise Exception("No valid config found!")
+    raise Exception(
+        "❌ No configuration found. Either set ENV=True or create config.py with Development class."
+    )
