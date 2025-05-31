@@ -2,18 +2,18 @@
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~# CatUserBot #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 # Copyright (C) 2020-2023 by TgCatUB@Github.
-
-# This file is part of: https://github.com/TgCatUB/catuserbot
-# and is released under the "GNU v3.0 License Agreement".
-
-# Please see: https://github.com/TgCatUB/catuserbot/blob/master/LICENSE
+# https://github.com/TgCatUB/catuserbot - GNU v3.0 License
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
 import os
 
-ENV = bool(os.environ.get("ENV", False))
+ENV = bool(os.environ.get("ENV", True))  # Default True for Koyeb/Replit
 
 if ENV:
-    from sample_config import Config, VPS_NOLOAD  # noqa
+    from sample_config import Config  # ✅ Uses env vars for Koyeb/Heroku/etc.
 elif os.path.exists("config.py"):
-    from config import Development as Config  # noqa
+    from config import Development as Config  # ✅ For local dev only
+else:
+    raise Exception(
+        "❌ No configuration found. Either set ENV=True or create config.py with Development class."
+    )
