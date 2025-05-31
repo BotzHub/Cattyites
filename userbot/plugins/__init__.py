@@ -47,6 +47,9 @@ PM_START = []
 PMMESSAGE_CACHE = {}
 PMMENU = "pmpermit_menu" not in Config.NO_LOAD
 
+#VPS
+VPS_NOLOAD = []  # Empty list means load all plugins
+
 # Gdrive
 TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 
