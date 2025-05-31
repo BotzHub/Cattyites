@@ -10,8 +10,8 @@ import os
 ENV = bool(os.environ.get("ENV", True))
 
 if ENV:
-    from sample_config import Config
+    pass
 elif os.path.exists("config.py"):
-    from config import Development as Config
+    pass
 else:
     raise Exception("No valid config found!")
