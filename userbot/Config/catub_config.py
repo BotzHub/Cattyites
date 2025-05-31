@@ -10,10 +10,7 @@ import os
 ENV = bool(os.environ.get("ENV", True))  # Default True for Koyeb/Replit
 
 if ENV:
-    from sample_config import (  # ✅ Uses env vars for Koyeb/Heroku/etc.
-        VPS_NOLOAD,
-        Config,
-    )
+    from sample_config import Config  # ✅ Uses env vars for Koyeb/Heroku/etc.
 elif os.path.exists("config.py"):
     from config import Development as Config  # ✅ For local dev only
 else:
