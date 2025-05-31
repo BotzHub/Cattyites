@@ -58,6 +58,12 @@ validators
 vcsi==7.0.15
 wand
 wget
+Flask==2.2.2
+gunicorn==20.1.0
+aiohttp==3.8.2
+Jinja2==3.0.3
+werkzeug==2.2.2
+itsdangerous==2.0.1
 
 git+https://github.com/Jisan09/search-engine-parser
 git+https://github.com/Jisan09/Telethon@test
