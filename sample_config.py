@@ -8,8 +8,7 @@ from typing import Set
 from telethon.tl.types import ChatBannedRights
 from validators.url import url
 
-
-class Config(object):
+class Config:
     LOGGER = True
     # MUST NEEDED VARS
     # set this value with your name
